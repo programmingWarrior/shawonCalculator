@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <section class="calculator">
+       <div id="total">
+           <h1>Shawon's Calculator</h1>
+        <input type="text" id="input"><br>
+        <button onclick="getInput(1)">1</button>
+        <button onclick="getInput(2)">2</button>
+        <button onclick="getInput(3)">3</button>
+        <button onclick="getInput('+')">+</button>
+    
+        <br>
+        <button onclick="getInput(4)">4</button>
+        <button onclick="getInput(5)">5</button>
+        <button onclick="getInput(6)">6</button>
+        <button onclick="getInput('-')">-</button>
+    
+        <br>
+        <button onclick="getInput(7)">7</button>
+        <button onclick="getInput(8)">8</button>
+        <button onclick="getInput(9)">9</button>
+        <button onclick="getInput('*')">*</button>
+        
+        <br>
+        <button onclick="getInput('C')" >C</button>
+        <button onclick="getInput(0)">0</button>
+        <button onclick="getInput('.')">.</button>
+        <button onclick="getInput('=')">=</button>
+       </div>
+   </section>
+
+   <script>
+       var ok = 0;
+       function getInput(i){
+           var x = i;
+          
+
+           if(x == "="){
+               document.getElementById('input').value = eval(document.getElementById('input').value);
+           }
+           else if (x === "+" || x == "-" || x == "*" || x== "/"  ){
+               if(ok == 0){
+                   document.getElementById("input").value += i;
+                   ok=1;
+               }
+           }
+           else if(x === "C"){
+               document.getElementById('input').value = '';
+           }
+           else{
+            document.getElementById("input").value += i;
+            ok=0;
+           }
+       }
+   </script>
+</body>
+</html>
